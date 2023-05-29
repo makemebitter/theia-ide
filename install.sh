@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-export mode=${"compile"}
+export mode=${1:-"compile"}
 export PYTHONPATH=${2:-"$PYTHONPATH"}
 
 # pre
@@ -41,7 +41,6 @@ if [[ "$mode" = "compile" ]]; then
     npm run build-deb
 elif [[ "$mode" = "download" ]]; then
     wget https://github.com/makemebitter/theia-ide/releases/download/0.0.1/theia-example_0.0.1_all.deb
-
 fi
 
 mkdir $HOME/.theia
