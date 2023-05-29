@@ -40,15 +40,15 @@ if [[ "$mode" = "compile" ]]; then
 
     npm run build-deb
 elif [[ "$mode" = "download" ]]; then
-    wget https://github.com/makemebitter/theia-ide/releases/download/0.0.1/theia-example_0.0.1_all.deb
+    wget https://github.com/makemebitter/theia-ide/releases/download/0.0.1/theia-example_0.0.1_all.deb -O theia-example_0.0.1_all.deb
 fi
 
 mkdir -p $HOME/.theia
 cp settings.json $HOME/.theia/ 
 
 DEFAULT_PYTHON="/usr/bin/python"
-sed -i -e "s/${DEFAULT_PYTHON}/${PYTHONPATH}/g" $HOME/.theia/settings.json
-sudo mkdir /.metals
+sed -i -e "s#${DEFAULT_PYTHON}#${PYTHONPATH}#g" $HOME/.theia/settings.json
+sudo mkdir -p /.metals
 sudo chown -R $(id -u):$(id -g) /.metals
 sudo apt-get install -y ./theia-example_0.0.1_all.deb
 
