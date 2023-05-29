@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-DEFAULT_PYTHON="python"
+DEFAULT_PYTHON="python3"
 export mode=${1:-"compile"}
 export PYTHONBIN=${2:-"$DEFAULT_PYTHON"}
 

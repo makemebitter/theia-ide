@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "python",
+    "python.pythonPath": "python3",
     "python.linting.pylintArgs": [
         "--generated-members",
         "torch.*"
