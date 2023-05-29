@@ -43,7 +43,7 @@ elif [[ "$mode" = "download" ]]; then
     wget https://github.com/makemebitter/theia-ide/releases/download/0.0.1/theia-example_0.0.1_all.deb
 fi
 
-mkdir $HOME/.theia
+mkdir -p $HOME/.theia
 cp settings.json $HOME/.theia/ 
 
 DEFAULT_PYTHON="/usr/bin/python"
