@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-
+DEFAULT_PYTHON="python"
 export mode=${1:-"compile"}
-export PYTHONPATH=${2:-"$PYTHONPATH"}
+export PYTHONBIN=${2:-"$DEFAULT_PYTHON"}
 
 # pre
 sudo apt-get install -y libx11-dev libxkbfile-dev
@@ -46,8 +46,8 @@ fi
 mkdir -p $HOME/.theia
 cp settings.json $HOME/.theia/ 
 
-DEFAULT_PYTHON="/usr/bin/python"
-sed -i -e "s#${DEFAULT_PYTHON}#${PYTHONPATH}#g" $HOME/.theia/settings.json
+
+sed -i -e "s#${DEFAULT_PYTHON}#${PYTHONBIN}#g" $HOME/.theia/settings.json
 sudo mkdir -p /.metals
 sudo chown -R $(id -u):$(id -g) /.metals
 sudo apt-get install -y ./theia-example_0.0.1_all.deb
