@@ -37,7 +37,7 @@
     "scripts": {
         "preinstall": "node-gyp install",
         "prebuild-deb": "npm install -g node-deb",
-        "build-deb": "node-deb -- ."
+        "build-deb": "node-deb -- src-gen lib plugins run_theia.sh settings.json gen-webpack.config.js webpack.config.js"
     },
     "node_deb": {
         "init":"none",
